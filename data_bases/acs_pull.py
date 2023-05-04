@@ -10,8 +10,7 @@ import requests
 import pandas as pd
 
 API_key = "c5c557882564fa5b35f0bb0718fe615a8db631ff"
-DIRECTORY = "../data/"
-
+# DIRECTORY = "../data/"
 
 class CensusAPI:
     """
@@ -65,18 +64,16 @@ class CensusAPI:
             "NAME",
             "B01001_001E",
             "B01001_026E",
-            "B01001_029E",
-            "B01001_030E",
-            "B01001_031E",
-            "B01001_032E",
-            "B01001_033E",
-            "B01001_034E",
-            "B01001_035E",
-            "B01001_036E",
-            "B01001_037E",
-            "B01001_038E",
-            "B18135_023E",
-            "B18135_022E",
+            # "B01001_029E",
+            # "B01001_030E",
+            # "B01001_031E",
+            # "B01001_032E",
+            # "B01001_033E",
+            # "B01001_034E",
+            # "B01001_035E",
+            # "B01001_036E",
+            # "B01001_037E",
+            # "B01001_038E",
             "B19001_002E",
             "B19001_003E",
             "B19001_004E",
@@ -87,26 +84,30 @@ class CensusAPI:
             "B19001_009E",
             "B19001_010E",
             "B19001_011E",
-            "B19058_002E",
-            "B19058_003E",
-            "B09010_001E",
             "B01003_001E",
-            "B09010_002E",
             "B19013_001E",
-            "B19123_001E",
-            "B19123_002E",
-            "B19123_005E",
-            "B19123_008E",
-            "B19123_011E",
-            "B19123_014E",
-            "B19123_017E",
-            "B19123_020E",
-            "DP04_0142PE",
-            "DP04_0141PE",
-            "DP04_0140PE",
-            "DP04_0139PE",
-            "DP04_0138PE",
-            "DP04_0137PE",
+            "DP02_0001E",
+            "DP02_0017E",
+            "DP02_0018E",
+            "DP02_0022E",
+            "DP02_0053E",
+            "DP02_0054E",
+            "DP02_0055E",
+            "DP02_0056E",
+            "DP02_0057E",
+            "DP02_0058E",
+            "DP02_0069E",
+            "DP02_0070E",
+            "DP02_0088E",
+            "DP02_0089E",
+            "DP02_0090E",
+            "DP02_0094E",
+            "DP02_0095E",
+            "DP02_0096E",
+            "DP02_0097E",
+            "DP02_0152E",
+            "DP02_0153E",
+            "DP02_0154E"            
         ]
 
         # Identify columns that are found in the profile and detailed tables
@@ -137,18 +138,16 @@ class CensusAPI:
                 "NAME": "census_name",
                 "B01001_001E": "total_population",
                 "B01001_026E": "total_female",
-                "B01001_029E": "total_female_10_to_14",
-                "B01001_030E": "total_female_15_to_17",
-                "B01001_031E": "total_female_18_to_19",
-                "B01001_032E": "total_female_20",
-                "B01001_033E": "total_female_21",
-                "B01001_034E": "total_female_22_to_24",
-                "B01001_035E": "total_female_25_to_29",
-                "B01001_036E": "total_female_30_to_34",
-                "B01001_037E": "total_female_35_to_39",
-                "B01001_038E": "total_female_40_to_44",
-                "B18135_023E": "total_19_to_64_no_health_insurance",
-                "B18135_022E": "total_19_to_64_public_health_insurance",
+                # "B01001_029E": "total_female_10_to_14",
+                # "B01001_030E": "total_female_15_to_17",
+                # "B01001_031E": "total_female_18_to_19",
+                # "B01001_032E": "total_female_20",
+                # "B01001_033E": "total_female_21",
+                # "B01001_034E": "total_female_22_to_24",
+                # "B01001_035E": "total_female_25_to_29",
+                # "B01001_036E": "total_female_30_to_34",
+                # "B01001_037E": "total_female_35_to_39",
+                # "B01001_038E": "total_female_40_to_44",
                 "B19001_002E": "total_no_income",
                 "B19001_003E": "total_with_income",
                 "B19001_004E": "total_with_income_level1",
@@ -159,26 +158,30 @@ class CensusAPI:
                 "B19001_009E": "total_with_income_level6",
                 "B19001_010E": "total_with_income_level7",
                 "B19001_011E": "total_with_income_level8",
-                "B19058_002E": "total_receives_stamps_snap",
-                "B19058_003E": "no_stamps_snap",
-                "B09010_001E": "receipt_stamps_snap",
-                "B09010_002E": "receipt_stamps_snap_household",
-                "B19123_001E": "total_assistance",
                 "B19013_001E": "median_income",
                 "B01003_001E": "total_pop_in_tract",
-                "B19123_002E": "fam_1_with_snap",
-                "B19123_005E": "fam_2_with_snap",
-                "B19123_008E": "fam_3_with_snap",
-                "B19123_011E": "fam_4_with_snap",
-                "B19123_014E": "fam_5_with_snap",
-                "B19123_017E": "fam_6_with_snap",
-                "B19123_020E": "fam_7_with_snap",
-                "DP04_0142PE": "rent_percent_35_more",
-                "DP04_0141PE": "rent_percent_30_34_9",
-                "DP04_0140PE": "rent_percent_25_29_9",
-                "DP04_0139PE": "rent_percent_20_24_9",
-                "DP04_0138PE": "rent_percent_15_19_9",
-                "DP04_0137PE": "rent_percent_15_less",
+                "DP02_0001E" : "num_households",
+                "DP02_0017E" : "avg_family_size",
+                "DP02_0018E" : "pop_in_households",
+                "DP02_0022E" : "pop_in_households_child",
+                "DP02_0053E" : "pop_enrolled",
+                "DP02_0054E" : "pop_enrolled_nursery",
+                "DP02_0055E" : "pop_enrolled_kinder",
+                "DP02_0056E" : "pop_enrolled_elementary",
+                "DP02_0057E" : "pop_enrolled_highschool",
+                "DP02_0058E" : "pop_enrolled_college_grad",
+                "DP02_0069E" : "pop_enrolled_",
+                "DP02_0070E" : "civilian_pop",
+                "DP02_0088E" : "tot_pop_birth",
+                "DP02_0089E" : "tot_pop_birth_native",
+                "DP02_0090E" : "tot_pop_birth_native_us",
+                "DP02_0094E" : "tot_pop_birth_foreign",
+                "DP02_0095E" : "foreign_born",
+                "DP02_0096E" : "foreign_born_us_citizen",
+                "DP02_0097E" : "foreign_born_non_us_citizen",
+                "DP02_0152E" : "comp_tot_households",
+                "DP02_0153E" : "comp_tot_households_pc",
+                "DP02_0154E" : "comp_tot_households_internet"
             }
         )
 
@@ -186,18 +189,16 @@ class CensusAPI:
             dtype={
                 "total_population": "int64",
                 "total_female": "int64",
-                "total_female_10_to_14": "int64",
-                "total_female_15_to_17": "int64",
-                "total_female_18_to_19": "int64",
-                "total_female_20": "int64",
-                "total_female_21": "int64",
-                "total_female_22_to_24": "int64",
-                "total_female_25_to_29": "int64",
-                "total_female_30_to_34": "int64",
-                "total_female_35_to_39": "int64",
-                "total_female_40_to_44": "int64",
-                "total_19_to_64_no_health_insurance": "int64",
-                "total_19_to_64_public_health_insurance": "int64",
+                # "total_female_10_to_14": "int64",
+                # "total_female_15_to_17": "int64",
+                # "total_female_18_to_19": "int64",
+                # "total_female_20": "int64",
+                # "total_female_21": "int64",
+                # "total_female_22_to_24": "int64",
+                # "total_female_25_to_29": "int64",
+                # "total_female_30_to_34": "int64",
+                # "total_female_35_to_39": "int64",
+                # "total_female_40_to_44": "int64",
                 "total_no_income": "int64",
                 "total_with_income": "int64",
                 "total_with_income_level1": "int64",
@@ -208,42 +209,11 @@ class CensusAPI:
                 "total_with_income_level6": "int64",
                 "total_with_income_level7": "int64",
                 "total_with_income_level8": "int64",
-                "total_receives_stamps_snap": "int64",
-                "no_stamps_snap": "int64",
-                "receipt_stamps_snap": "int64",
-                "receipt_stamps_snap_household": "int64",
-                "total_assistance": "int64",
                 "median_income": "int64",
-                "fam_1_with_snap": "int64",
-                "fam_2_with_snap": "int64",
-                "fam_3_with_snap": "int64",
-                "fam_4_with_snap": "int64",
-                "fam_5_with_snap": "int64",
-                "fam_6_with_snap": "int64",
-                "fam_7_with_snap": "int64",
-                "total_pop_in_tract": "int64",
+                "total_pop_in_tract": "int64"
             }
         )
-        merged_df["total_female_mentrual_age"] = merged_df[
-            [
-                "total_female_10_to_14",
-                "total_female_15_to_17",
-                "total_female_18_to_19",
-                "total_female_20",
-                "total_female_21",
-                "total_female_22_to_24",
-                "total_female_25_to_29",
-                "total_female_30_to_34",
-                "total_female_35_to_39",
-                "total_female_40_to_44",
-            ]
-        ].apply(sum, axis=1)
 
-        merged_df = merged_df.assign(
-            percentage_female_menstrual_age=(
-                merged_df.total_female_mentrual_age / merged_df.total_female
-            )
-        )
         return self.move_key_columns_to_front(merged_df)
 
     def classify_columns(self, column_lst):
@@ -294,8 +264,9 @@ class CensusAPI:
             dataframe: The dataframe to export
         """
         # Construct the full path to the file
-        export_as = DIRECTORY + "Census_Cook_County_dta.json"
-        print("The data was exported to this location:", export_as)
+        # export_as = DIRECTORY + "Census_Cook_County_dta.json"
+        export_as = "Census_Cook_County_dta.json"
+        # print("The data was exported to this location:", export_as)
         dataframe.to_json(export_as, orient="records")
 
 
@@ -306,48 +277,7 @@ year = 2021
 api = CensusAPI(API_key, year)
 
 merged_df = api.get_data(geo, state)
+merged_df.to_csv("census_tract_data.csv")
 
 # Export dataframe
-api.export_dataframe_to_json(merged_df)
-
-
-# def pull_acs_data():
-#     """
-#     Retrieves 2019 data of the American Census Survey
-#         from the US Census API
-
-#     Input: None
-
-#     Returns: None, writes the pulled data as a csv file in the provided path at
-#             zip code level demographics for Illinois.
-#     """
-
-#     acs_var = censusdata.download('acs5/subject', 2019, censusdata.censusgeo(
-#         [('zip%20code%20tabulation%20area', '*')]),
-#         ['S0601_C01_047E', 'S1901_C01_013E', 'S1501_C02_009E',
-#          'S1501_C02_012E', 'S2301_C04_001E', 'S0101_C01_001E',
-#          'S0101_C01_002E', 'S0101_C01_003E', 'S0101_C01_004E',
-#          'S0101_C01_005E', 'S0101_C01_006E', 'S0101_C01_007E',
-#          'S0101_C01_008E', 'S0101_C01_009E', 'S0101_C01_010E',
-#          'S0101_C01_011E', 'S0101_C01_012E', 'S0101_C01_013E',
-#          'S0101_C01_014E', 'S0101_C01_015E', 'S0101_C01_016E',
-#          'S0101_C01_017E', 'S0101_C01_018E', 'S0101_C01_019E',
-#          'S0601_C01_014E', 'S0601_C01_015E', 'S0601_C01_016E',
-#          'S0601_C01_017E', 'S0601_C01_021E', 'STATE',
-#          'ZCTA'])
-
-#     acs_var = acs_var[acs_var.STATE == 17]
-#     acs_var = acs_var.drop('STATE', axis=1)
-
-#     acs_var.columns = ['hh_median_income', 'hh_mean_income', 'perc_educ_highschool',
-#                         'perc_educ_bachelor', 'unemployment_rate', 'total_population',
-#                         'age_under_5', 'age_5_to_9', 'age_10_to_14',
-#                         'age_15_to_19', 'age_20_to_24', 'age_25_to_29',
-#                         'age_30_to_34', 'age_35_to_39', 'age_40_to_44',
-#                         'age_45_to_49', 'age_50_to_54', 'age_55_to_59',
-#                         'age_60_to_64', 'age_65_to_69', 'age_70_to_74',
-#                         'age_75_to_79', 'age_80_to_84', 'age_85_up',
-#                         'pop_white', 'pop_black', 'pop_native',
-#                         'pop_asian', 'pop_latino', 'zip_code']
-
-#     acs_var.to_csv('deprivation_evictions/data_bases/raw_data/acs_data.csv')
+# api.export_dataframe_to_json(merged_df)
