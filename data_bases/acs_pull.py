@@ -8,29 +8,25 @@
 
 import requests
 import pandas as pd
-
-API_key = "c5c557882564fa5b35f0bb0718fe615a8db631ff"
-# DIRECTORY = "../data/"
+from . import API_KEY
 
 class CensusAPI:
     """
-    Extracts data from the US Census Data.
+    Extracts data from the US Census Data for a specified geographic location and state.
+    The default is at the census tract level and for the state of Illinois.
     """
 
-    def __init__(self, census_key, year):
+    def __init__(self, year):
         """
         Initializes a new instance of the CensusAPI class.
 
         Inputs:
-            - census_key (str): A string representing the API key
-              needed to access the US Census Bureau API
             - year (int): An integer with the year the data want to be
               consulted
         """
 
         assert isinstance(year, int), f"year parameter is 'str' and should be 'int'"
 
-        self.census_key = census_key
         self.base_url_macro_table = (
             "https://api.census.gov/data/" + str(year) + "/acs/acs5"
         )
@@ -38,7 +34,7 @@ class CensusAPI:
             "https://api.census.gov/data/" + str(year) + "/acs/acs5/profile"
         )
 
-    def get_data(self, geo, state):
+    def get_data(self, geo="tract:*", state="17"):
         """
         This method extracts data from the US Census Bureau API
         for the specified geographic location and state.
@@ -64,16 +60,6 @@ class CensusAPI:
             "NAME",
             "B01001_001E",
             "B01001_026E",
-            # "B01001_029E",
-            # "B01001_030E",
-            # "B01001_031E",
-            # "B01001_032E",
-            # "B01001_033E",
-            # "B01001_034E",
-            # "B01001_035E",
-            # "B01001_036E",
-            # "B01001_037E",
-            # "B01001_038E",
             "B19001_002E",
             "B19001_003E",
             "B19001_004E",
@@ -107,7 +93,7 @@ class CensusAPI:
             "DP02_0097E",
             "DP02_0152E",
             "DP02_0153E",
-            "DP02_0154E"            
+            "DP02_0154E",
         ]
 
         # Identify columns that are found in the profile and detailed tables
@@ -115,11 +101,11 @@ class CensusAPI:
 
         # Define the API calls
         # For the detailed table:
-        full_url_macro = f"{self.base_url_macro_table}?get={macro_columns}&for={geo}&in=state:{state}&key={self.census_key}"
+        full_url_macro = f"{self.base_url_macro_table}?get={macro_columns}&for={geo}&in=state:{state}&key={API_KEY}"
         data_response_macro = requests.get(full_url_macro)
 
         # For the profile tables:
-        full_url_profile = f"{self.base_url_profile_table}?get={profile_columns}&for={geo}&in=state:{state}&key={self.census_key}"
+        full_url_profile = f"{self.base_url_profile_table}?get={profile_columns}&for={geo}&in=state:{state}&key={API_KEY}"
         data_response_profile = requests.get(full_url_profile)
 
         macro_json = data_response_macro.json()
@@ -138,16 +124,6 @@ class CensusAPI:
                 "NAME": "census_name",
                 "B01001_001E": "total_population",
                 "B01001_026E": "total_female",
-                # "B01001_029E": "total_female_10_to_14",
-                # "B01001_030E": "total_female_15_to_17",
-                # "B01001_031E": "total_female_18_to_19",
-                # "B01001_032E": "total_female_20",
-                # "B01001_033E": "total_female_21",
-                # "B01001_034E": "total_female_22_to_24",
-                # "B01001_035E": "total_female_25_to_29",
-                # "B01001_036E": "total_female_30_to_34",
-                # "B01001_037E": "total_female_35_to_39",
-                # "B01001_038E": "total_female_40_to_44",
                 "B19001_002E": "total_no_income",
                 "B19001_003E": "total_with_income",
                 "B19001_004E": "total_with_income_level1",
@@ -160,45 +136,37 @@ class CensusAPI:
                 "B19001_011E": "total_with_income_level8",
                 "B19013_001E": "median_income",
                 "B01003_001E": "total_pop_in_tract",
-                "DP02_0001E" : "num_households",
-                "DP02_0017E" : "avg_family_size",
-                "DP02_0018E" : "pop_in_households",
-                "DP02_0022E" : "pop_in_households_child",
-                "DP02_0053E" : "pop_enrolled",
-                "DP02_0054E" : "pop_enrolled_nursery",
-                "DP02_0055E" : "pop_enrolled_kinder",
-                "DP02_0056E" : "pop_enrolled_elementary",
-                "DP02_0057E" : "pop_enrolled_highschool",
-                "DP02_0058E" : "pop_enrolled_college_grad",
-                "DP02_0069E" : "pop_enrolled_",
-                "DP02_0070E" : "civilian_pop",
-                "DP02_0088E" : "tot_pop_birth",
-                "DP02_0089E" : "tot_pop_birth_native",
-                "DP02_0090E" : "tot_pop_birth_native_us",
-                "DP02_0094E" : "tot_pop_birth_foreign",
-                "DP02_0095E" : "foreign_born",
-                "DP02_0096E" : "foreign_born_us_citizen",
-                "DP02_0097E" : "foreign_born_non_us_citizen",
-                "DP02_0152E" : "comp_tot_households",
-                "DP02_0153E" : "comp_tot_households_pc",
-                "DP02_0154E" : "comp_tot_households_internet"
+                "DP02_0001E": "num_households",
+                "DP02_0017E": "avg_family_size",
+                "DP02_0018E": "pop_in_households",
+                "DP02_0022E": "pop_in_households_child",
+                "DP02_0053E": "pop_enrolled",
+                "DP02_0054E": "pop_enrolled_nursery",
+                "DP02_0055E": "pop_enrolled_kinder",
+                "DP02_0056E": "pop_enrolled_elementary",
+                "DP02_0057E": "pop_enrolled_highschool",
+                "DP02_0058E": "pop_enrolled_college_grad",
+                "DP02_0069E": "pop_enrolled_",
+                "DP02_0070E": "civilian_pop",
+                "DP02_0088E": "tot_pop_birth",
+                "DP02_0089E": "tot_pop_birth_native",
+                "DP02_0090E": "tot_pop_birth_native_us",
+                "DP02_0094E": "tot_pop_birth_foreign",
+                "DP02_0095E": "foreign_born",
+                "DP02_0096E": "foreign_born_us_citizen",
+                "DP02_0097E": "foreign_born_non_us_citizen",
+                "DP02_0152E": "comp_tot_households",
+                "DP02_0153E": "comp_tot_households_pc",
+                "DP02_0154E": "comp_tot_households_internet",
             }
         )
+
+        # Define some variable types:
 
         merged_df = merged_df.astype(
             dtype={
                 "total_population": "int64",
                 "total_female": "int64",
-                # "total_female_10_to_14": "int64",
-                # "total_female_15_to_17": "int64",
-                # "total_female_18_to_19": "int64",
-                # "total_female_20": "int64",
-                # "total_female_21": "int64",
-                # "total_female_22_to_24": "int64",
-                # "total_female_25_to_29": "int64",
-                # "total_female_30_to_34": "int64",
-                # "total_female_35_to_39": "int64",
-                # "total_female_40_to_44": "int64",
                 "total_no_income": "int64",
                 "total_with_income": "int64",
                 "total_with_income_level1": "int64",
@@ -210,8 +178,13 @@ class CensusAPI:
                 "total_with_income_level7": "int64",
                 "total_with_income_level8": "int64",
                 "median_income": "int64",
-                "total_pop_in_tract": "int64"
+                "total_pop_in_tract": "int64",
             }
+        )
+
+        # Create extra variables:
+        merged_df.loc[:, "total_male"] = (
+            merged_df.loc[:, "total_population"] - merged_df.loc[:, "total_female"]
         )
 
         return self.move_key_columns_to_front(merged_df)
@@ -254,6 +227,7 @@ class CensusAPI:
         dataframe = dataframe[
             cols_to_move + [col for col in dataframe.columns if col not in cols_to_move]
         ]
+
         return dataframe
 
     def export_dataframe_to_json(self, dataframe):
@@ -265,19 +239,18 @@ class CensusAPI:
         """
         # Construct the full path to the file
         # export_as = DIRECTORY + "Census_Cook_County_dta.json"
-        export_as = "Census_Cook_County_dta.json"
+        export_as = "census_cook_county_dta.json"
         # print("The data was exported to this location:", export_as)
         dataframe.to_json(export_as, orient="records")
 
 
 # Define the parameter to call on the API
-geo = "tract:*"
-state = "17"
+
 year = 2021
-api = CensusAPI(API_key, year)
+api = CensusAPI(year)
 
-merged_df = api.get_data(geo, state)
-merged_df.to_csv("census_tract_data.csv")
+merged_df = api.get_data()
+# merged_df.to_csv("census_cook_county_dta.csv")
 
-# Export dataframe
-# api.export_dataframe_to_json(merged_df)
+# Export dataframe as JSON
+api.export_dataframe_to_json(merged_df)
