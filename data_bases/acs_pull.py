@@ -3,12 +3,17 @@
 # -------------------------------------------------------------------- #
 
 # This code extracts predefined sociodemographic data from the ACS for the
-# state of Illinois. A class is created with three atributes and four methods
+# state of Illinois. A class is created with two atributes and four methods
 # in order to get the data and export it to a location specified in DIRECTORY.
+
+# IMPORTANT: An API call can only handle up to 50 variable at the same time.
 
 import requests
 import pandas as pd
-from . import API_KEY
+from ..constants import API_KEY
+
+DIRECTORY = "./cpl_project/data_bases/"
+
 
 class CensusAPI:
     """
@@ -54,12 +59,57 @@ class CensusAPI:
         # First two #: subject identifier
         # Three following #: table # within a subject
         # Three digits after _: line number within a table
-        # Last letter: E for estimate.
+        # Last letter: E for estimate, M for margin, etc.
         cols = [
             "GEO_ID",
             "NAME",
-            "B01001_001E",
-            "B01001_026E",
+            "DP05_0001E",
+            "DP05_0002E",
+            "DP05_0003E",
+            "DP05_0005E",
+            "DP05_0018E",
+            "DP05_0021E",
+            "DP05_0024E",
+            "DP05_0037E",
+            "DP05_0038E",
+            "DP05_0039E",
+            "DP05_0044E",
+            "DP05_0052E",
+            "DP05_0057E",
+            "DP05_0058E",
+            "DP05_0071E",
+            "DP05_0086E",
+            "DP02_0001E",
+            "DP02_0016E",
+            "DP02_0017E",
+            "DP02_0018E",
+            "DP02_0022E",
+            "DP02_0053E",
+            "DP02_0089E",
+            "DP02_0094E",
+            "DP02_0113E",
+            "DP02_0115E",
+            "DP02_0152E",
+            "DP02_0153E",
+            "DP02_0154E",
+            "DP03_0009E",
+            "DP03_0024E",
+            "DP03_0062E",
+            "DP03_0063E",
+            "DP03_0066E",
+            "DP03_0074E",
+            "DP03_0088E",
+            "DP03_0119E",
+            "DP03_0128E",
+            "DP04_0001E",
+            "DP04_0002E",
+            "DP04_0046E",
+            "DP04_0058E",
+            "DP04_0101E",
+            "DP04_0109E",
+            "DP04_0115E",
+            "DP04_0124E",
+            "DP04_0134E",
             "B19001_002E",
             "B19001_003E",
             "B19001_004E",
@@ -70,30 +120,7 @@ class CensusAPI:
             "B19001_009E",
             "B19001_010E",
             "B19001_011E",
-            "B01003_001E",
             "B19013_001E",
-            "DP02_0001E",
-            "DP02_0017E",
-            "DP02_0018E",
-            "DP02_0022E",
-            "DP02_0053E",
-            "DP02_0054E",
-            "DP02_0055E",
-            "DP02_0056E",
-            "DP02_0057E",
-            "DP02_0058E",
-            "DP02_0069E",
-            "DP02_0070E",
-            "DP02_0088E",
-            "DP02_0089E",
-            "DP02_0090E",
-            "DP02_0094E",
-            "DP02_0095E",
-            "DP02_0096E",
-            "DP02_0097E",
-            "DP02_0152E",
-            "DP02_0153E",
-            "DP02_0154E",
         ]
 
         # Identify columns that are found in the profile and detailed tables
@@ -122,8 +149,53 @@ class CensusAPI:
             columns={
                 "GEO_ID": "geo_id",
                 "NAME": "census_name",
-                "B01001_001E": "total_population",
-                "B01001_026E": "total_female",
+                "DP05_0001E": "total_population",
+                "DP05_0002E": "total_male",
+                "DP05_0003E": "total_female",
+                "DP05_0005E": "under_5_years",
+                "DP05_0018E": "median_age",
+                "DP05_0021E": "over_18_years",
+                "DP05_0024E": "over_65_years",
+                "DP05_0037E": "white",
+                "DP05_0038E": "black",
+                "DP05_0039E": "native",
+                "DP05_0044E": "asian",
+                "DP05_0052E": "islander",
+                "DP05_0057E": "other_race",
+                "DP05_0058E": "more_one_race",
+                "DP05_0071E": "latino",
+                "DP05_0086E": "housing_units_dp5",
+                "DP02_0001E": "num_households_dp2",
+                "DP02_0016E": "avg_household_size",
+                "DP02_0017E": "avg_family_size",
+                "DP02_0018E": "pop_in_households",
+                "DP02_0022E": "pop_in_households_child",
+                "DP02_0053E": "pop_enrolled",
+                "DP02_0089E": "tot_pop_birth_native",
+                "DP02_0094E": "tot_pop_birth_foreign",
+                "DP02_0113E": "speaks_english_only",
+                "DP02_0115E": "speaks_english_less_very_well",
+                "DP02_0152E": "comp_tot_households",
+                "DP02_0153E": "comp_tot_households_pc",
+                "DP02_0154E": "comp_tot_households_internet",
+                "DP03_0009E": "unemployment_rate",
+                "DP03_0024E": "work_from_home",
+                "DP03_0062E": "median_hh_income_d",
+                "DP03_0063E": "average_hh_income_d",
+                "DP03_0066E": "hh_social_security",
+                "DP03_0074E": "hh_foodstamps_snap",
+                "DP03_0088E": "per_capita_income_d",
+                "DP03_0119E": "perc_fam_bellow_poverty",
+                "DP03_0128E": "perc_ppl_bellow_poverty",
+                "DP04_0001E": "housing_units_dp4",
+                "DP04_0002E": "occupied_units",
+                "DP04_0046E": "occupied_units_owner",
+                "DP04_0058E": "occupied_units_no_vehicle",
+                "DP04_0101E": "median_owner_cost_unit_mortgage_d",
+                "DP04_0109E": "median_owner_cost_unit_no_mortgage_d",
+                "DP04_0115E": "rent_burdened_unit_mortgage",
+                "DP04_0124E": "rent_burdened_unit_no_mortgage",
+                "DP04_0134E": "occupied_median_rent_d",
                 "B19001_002E": "total_no_income",
                 "B19001_003E": "total_with_income",
                 "B19001_004E": "total_with_income_level1",
@@ -135,38 +207,12 @@ class CensusAPI:
                 "B19001_010E": "total_with_income_level7",
                 "B19001_011E": "total_with_income_level8",
                 "B19013_001E": "median_income",
-                "B01003_001E": "total_pop_in_tract",
-                "DP02_0001E": "num_households",
-                "DP02_0017E": "avg_family_size",
-                "DP02_0018E": "pop_in_households",
-                "DP02_0022E": "pop_in_households_child",
-                "DP02_0053E": "pop_enrolled",
-                "DP02_0054E": "pop_enrolled_nursery",
-                "DP02_0055E": "pop_enrolled_kinder",
-                "DP02_0056E": "pop_enrolled_elementary",
-                "DP02_0057E": "pop_enrolled_highschool",
-                "DP02_0058E": "pop_enrolled_college_grad",
-                "DP02_0069E": "pop_enrolled_",
-                "DP02_0070E": "civilian_pop",
-                "DP02_0088E": "tot_pop_birth",
-                "DP02_0089E": "tot_pop_birth_native",
-                "DP02_0090E": "tot_pop_birth_native_us",
-                "DP02_0094E": "tot_pop_birth_foreign",
-                "DP02_0095E": "foreign_born",
-                "DP02_0096E": "foreign_born_us_citizen",
-                "DP02_0097E": "foreign_born_non_us_citizen",
-                "DP02_0152E": "comp_tot_households",
-                "DP02_0153E": "comp_tot_households_pc",
-                "DP02_0154E": "comp_tot_households_internet",
             }
         )
 
         # Define some variable types:
-
         merged_df = merged_df.astype(
             dtype={
-                "total_population": "int64",
-                "total_female": "int64",
                 "total_no_income": "int64",
                 "total_with_income": "int64",
                 "total_with_income_level1": "int64",
@@ -178,14 +224,10 @@ class CensusAPI:
                 "total_with_income_level7": "int64",
                 "total_with_income_level8": "int64",
                 "median_income": "int64",
-                "total_pop_in_tract": "int64",
             }
         )
 
         # Create extra variables:
-        merged_df.loc[:, "total_male"] = (
-            merged_df.loc[:, "total_population"] - merged_df.loc[:, "total_female"]
-        )
 
         return self.move_key_columns_to_front(merged_df)
 
@@ -250,7 +292,7 @@ year = 2021
 api = CensusAPI(year)
 
 merged_df = api.get_data()
-# merged_df.to_csv("census_cook_county_dta.csv")
+merged_df.to_csv(DIRECTORY + "census_cook_county_dta.csv", index=False)
 
 # Export dataframe as JSON
-api.export_dataframe_to_json(merged_df)
+# api.export_dataframe_to_json(merged_df)
