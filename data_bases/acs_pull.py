@@ -3,13 +3,14 @@
 # -------------------------------------------------------------------- #
 
 # This code extracts predefined sociodemographic data from the ACS for the
-# state of Illinois. A class is created with two atributes and four methods
-# in order to get the data and export it to a location specified in DIRECTORY.
+# state of Illinois and Cook County. A class is created with two atributes and
+# four methods in order to get the data and export it to a location specified in DIRECTORY.
 
 # IMPORTANT: An API call can only handle up to 50 variable at the same time.
 
 import requests
 import pandas as pd
+import numpy as np
 from ..constants import API_KEY
 
 DIRECTORY = "./cpl_project/data_bases/"
@@ -111,17 +112,6 @@ class CensusAPI:
             "DP04_0115E",
             "DP04_0124E",
             "DP04_0134E",
-            "B19001_002E",
-            "B19001_003E",
-            "B19001_004E",
-            "B19001_005E",
-            "B19001_006E",
-            "B19001_007E",
-            "B19001_008E",
-            "B19001_009E",
-            "B19001_010E",
-            "B19001_011E",
-            "B19013_001E",
         ]
 
         # Identify columns that are found in the profile and detailed tables
@@ -144,7 +134,7 @@ class CensusAPI:
         profile_df = pd.DataFrame(profile_json[1:], columns=profile_json[0])
 
         # Merge dataframes on county and tract
-        merged_df = pd.merge(macro_df, profile_df, on=["county", "tract"])
+        merged_df = pd.merge(macro_df, profile_df, on=["county", "tract", "state"])
 
         merged_df = merged_df.rename(
             columns={
@@ -198,38 +188,8 @@ class CensusAPI:
                 "DP04_0115E": "rent_burdened_unit_mortgage",
                 "DP04_0124E": "rent_burdened_unit_no_mortgage",
                 "DP04_0134E": "occupied_median_rent_d",
-                "B19001_002E": "total_no_income",
-                "B19001_003E": "total_with_income",
-                "B19001_004E": "total_with_income_level1",
-                "B19001_005E": "total_with_income_level2",
-                "B19001_006E": "total_with_income_level3",
-                "B19001_007E": "total_with_income_level4",
-                "B19001_008E": "total_with_income_level5",
-                "B19001_009E": "total_with_income_level6",
-                "B19001_010E": "total_with_income_level7",
-                "B19001_011E": "total_with_income_level8",
-                "B19013_001E": "median_income",
             }
         )
-
-        # Define some variable types:
-        merged_df = merged_df.astype(
-            dtype={
-                "total_no_income": "int64",
-                "total_with_income": "int64",
-                "total_with_income_level1": "int64",
-                "total_with_income_level2": "int64",
-                "total_with_income_level3": "int64",
-                "total_with_income_level4": "int64",
-                "total_with_income_level5": "int64",
-                "total_with_income_level6": "int64",
-                "total_with_income_level7": "int64",
-                "total_with_income_level8": "int64",
-                "median_income": "int64",
-            }
-        )
-
-        # Create extra variables:
 
         return self.move_key_columns_to_front(merged_df)
 
