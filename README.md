@@ -1,5 +1,10 @@
-# Chicago Public Library (CPL) - Home Library Project
+# Chicago Public Library (CPL)
 
-This repo contains code that maps every census tract in the city of Chicago to each of the CPL's 81 branches. This helps to establish a definition of a "home" library to identify the expected user demographic based on proximity and community characteristics (such as population size and demographics) that each branch should serve.
+Chicago Public Library (CPL) serves all the residents of the City of Chicago. They have 81 locations, 4.5M annual visitors, 1M card holders, and 6M items in the collection. CPL is the largest provider of free internet access in the City, with over 900K PC sessions and 3M free wifi sessions annually. In addition, CPL connects patrons with a wide variety of programming, educational and social service supports, including public health (vaccines, Narcan overdose prevention), education, and economic and financial inclusion resources.
 
-The definition of a home library allows CPL to identify users who utilize their home branch and those who do not, in order to refine resources and programs offered at each branch based on user preferences and usage patterns.
+**Goals**
+The Chicago Public Library aims to gain a deeper understanding of the communities they serve in order to equitably and effectively allocate resources that cater to the communtiies' specific needs.
+
+- Exploratory data analysis/visualizations to understand the populations assigned to branches
+- Explore cardholder level data to understand usage patterns to help facilitate the refining of resources and programs offered
+- Link in transit information to understand which library branches may be underserved by public transit
