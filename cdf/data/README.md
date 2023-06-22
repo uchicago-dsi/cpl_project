@@ -8,6 +8,7 @@ We used three main data sources for this project:
     3. American Community Survey (ACS): json file obtained from an API call (See **notebooks/acs_pull.py** ) to the Census Bureau with several demographic variables to define each census tract characteristics. Variables selected by CPL.
 
 Files:
+
 **library_locations** - csv provided to us from CPL partner with all the information for each library branch
 
 **census_cook_county_dta.json** - census api call output from notebooks/acs_pull.py. Need API key to run
@@ -18,7 +19,9 @@ Files:
 
 **cpl_agg_data.csv** - output for CPL partner for reviewing. Includes demographic data about populations each library branch is serving based on our assignments
 
-**cpl_assignments.html** rendered map of census tract-library assignments
+**cpl_assignments.html** - rendered map of census tract-library assignments
+
+**lib_tract.csv** - mapping of libraries to census tracts
 
 **vars_dict_operations.xlsx** - created a data dictionary to map census variable codes, variable names, and aggregation operations which was also provided to CPL partner
 
