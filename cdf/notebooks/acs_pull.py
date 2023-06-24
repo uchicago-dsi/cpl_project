@@ -13,7 +13,7 @@ import pandas as pd
 import numpy as np
 from ..constants import API_KEY
 
-DIRECTORY = "./cpl_project/data/"
+DIRECTORY = "./cpl_project/cdf/data/"
 
 
 class CensusAPI:
