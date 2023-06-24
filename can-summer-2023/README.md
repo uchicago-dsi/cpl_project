@@ -10,7 +10,11 @@ This repository holds the results of an analysis to help CPL identify inequities
 
 #### Directory
 
-**data**: Contains raw CPL library branch hour and location, circulation, computer session, and visitor datasets pulled directly from the Chicago Open Data Portal, as well as cleaned versions of the datasets. NOTE: Data is available and current through April 2023.
+**data**: Contains datasets used in the analysis.
+
+- raw: Directory containing CPL library branch hour and location, circulation, computer session, and visitor datasets pulled directly from the Chicago Open Data Portal. NOTE: Data is available and current through April 2023. Also contains city and census tract boundaries and census demographics exported from Social Explorer.
+
+- clean: Directory containing cleaned datasets for library branch metrics and locations and census tract demographics.
 
 **notebooks**: Contains Jupyter notebooks used for the analysis.
 
