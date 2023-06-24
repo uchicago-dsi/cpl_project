@@ -6,7 +6,7 @@ Chicago Public Library (CPL) serves all the residents of the City of Chicago. Th
 
 **Goals**:
 
-The Chicago Public Library aims to gain a deeper understanding of the communities they serve in order to equitably and effectively allocate resources that cater to the communtiies' specific needs.
+The Chicago Public Library aims to gain a deeper understanding of the communities they serve in order to equitably and effectively allocate resources that cater to the communities' specific needs.
 
 - Exploratory data analysis/visualizations to understand the populations assigned to branches
 - Explore cardholder level data to understand usage patterns to help facilitate the refining of resources and programs offered

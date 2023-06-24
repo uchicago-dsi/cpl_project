@@ -1,0 +1,736 @@
+--------------------------------------------------------------------------------
+Codebook for Social Explorer report ID: R13395758
+--------------------------------------------------------------------------------
+
+Contents
+    - Table Summary
+    - Data Dictionary
+    - Citation and Use
+
+
+--------------------------------------------------------------------------------
+Table Summary
+--------------------------------------------------------------------------------
+ 
+Survey:           ACS 2021 (5-Year Estimates)
+Dataset:          Social Explorer Tables: ACS 2021 (5-Year Estimates)
+Tables:
+
+      1. Total Population
+         Universe:  Total Population
+         Name:      A00001
+         Variables:
+            A00001_001:   Total Population
+
+
+      2. Population Density (Per Sq. Mile)
+         Universe:  Total Population
+         Name:      A00002
+         Variables:
+            A00002_001:   Total Population
+            A00002_002:   Population Density (Per Sq. Mile)
+            A00002_003:   Area (Land)
+
+
+      3. Sex
+         Universe:  Total Population
+         Name:      A02001
+         Variables:
+            A02001_001:   Total Population:
+            A02001_002:      Male
+            A02001_003:      Female
+
+
+      4. Age (Detailed Version)
+         Universe:  Total population
+         Name:      C01001
+         Variables:
+            C01001_001:   Total:
+            C01001_002:      Under 5 Years
+            C01001_003:      5 to 9 Years
+            C01001_004:      10 to 14 Years
+            C01001_005:      15 to 17 Years
+            C01001_006:      18 and 19 Years
+            C01001_007:      20 Years
+            C01001_008:      21 Years
+            C01001_009:      22 to 24 Years
+            C01001_010:      25 to 29 Years
+            C01001_011:      30 to 34 Years
+            C01001_012:      35 to 39 Years
+            C01001_013:      40 to 44 Years
+            C01001_014:      45 to 49 Years
+            C01001_015:      50 to 54 Years
+            C01001_016:      55 to 59 Years
+            C01001_017:      60 and 61 Years
+            C01001_018:      62 to 64 Years
+            C01001_019:      65 and 66 Years
+            C01001_020:      67 to 69 Years
+            C01001_021:      70 to 74 Years
+            C01001_022:      75 to 79 Years
+            C01001_023:      80 to 84 Years
+            C01001_024:      85 Years and Over
+
+
+      5. Sex by Age
+         Universe:  Total Population
+         Name:      A02002
+         Variables:
+            A02002_001:   Total Population:
+            A02002_002:      Male:
+            A02002_003:         Under 5 Years
+            A02002_004:         5 to 9 Years
+            A02002_005:         10 to 14 Years
+            A02002_006:         15 to 17 Years
+            A02002_007:         18 to 24 Years
+            A02002_008:         25 to 34 Years
+            A02002_009:         35 to 44 Years
+            A02002_010:         45 to 54 Years
+            A02002_011:         55 to 64 Years
+            A02002_012:         65 to 74 Years
+            A02002_013:         75 to 84 Years
+            A02002_014:         85 Years and Over
+            A02002_015:      Female:
+            A02002_016:         Under 5 Years
+            A02002_017:         5 to 9 Years
+            A02002_018:         10 to 14 Years
+            A02002_019:         15 to 17 Years
+            A02002_020:         18 to 24 Years
+            A02002_021:         25 to 34 Years
+            A02002_022:         35 to 44 Years
+            A02002_023:         45 to 54 Years
+            A02002_024:         55 to 64 Years
+            A02002_025:         65 to 74 Years
+            A02002_026:         75 to 84 Years
+            A02002_027:         85 Years and Over
+
+
+      6. Race
+         Universe:  Total Population
+         Name:      A03001
+         Variables:
+            A03001_001:   Total Population:
+            A03001_002:      White Alone
+            A03001_003:      Black or African American Alone
+            A03001_004:      American Indian and Alaska Native Alone
+            A03001_005:      Asian Alone
+            A03001_006:      Native Hawaiian and Other Pacific Islander Alone
+            A03001_007:      Some Other Race Alone
+            A03001_008:      Two or More Races
+
+
+      7. Housing Units by Household Type (Including Living Alone) and Age of Householder
+         Universe:  Universe:  Occupied housing units
+         Name:      A10025
+         Variables:
+            A10025_001:   Occupied Housing Units:
+            A10025_002:      Family Households
+            A10025_003:         Married-Couple Family
+            A10025_004:            Householder 15 to 34 Years
+            A10025_005:            Householder 35 to 64 Years
+            A10025_006:            Householder 65 Years and Over
+            A10025_007:         Other Family
+            A10025_008:            Male Householder, No Wife Present
+            A10025_009:               Householder 15 to 34 Years
+            A10025_010:               Householder 35 to 64 Years
+            A10025_011:               Householder 65 Years and Over
+            A10025_012:            Female Householder, No Husband Present
+            A10025_013:               Householder 15 to 34 Years
+            A10025_014:               Householder 35 to 64 Years
+            A10025_015:               Householder 65 Years and Over
+            A10025_016:      Nonfamily Households
+            A10025_017:         Householder Living Alone
+            A10025_018:            Householder 15 to 34 Years
+            A10025_019:            Householder 35 to 64 Years
+            A10025_020:            Householder 65 Years and Over
+            A10025_021:         Householder Not Living Alone
+            A10025_022:            Householder 15 to 34 Years
+            A10025_023:            Householder 35 to 64 Years
+            A10025_024:            Householder 65 Years and Over
+
+
+      8. Highest Educational Attainment for Population 25 Years and Over
+         Universe:  Population 25 Years and Over
+         Name:      A12002
+         Variables:
+            A12002_001:   Population 25 Years and Over:
+            A12002_002:      Less than High School
+            A12002_003:      High School Graduate or More (Includes Equivalency)
+            A12002_004:      Some College or More
+            A12002_005:      Bachelor's Degree or More
+            A12002_006:      Master's Degree or More
+            A12002_007:      Professional School Degree or More
+            A12002_008:      Doctorate Degree
+
+
+      9. Unemployment Rate for Civilian Population in Labor Force 16 Years and Over
+         Universe:  Civilian Population in Labor Force 16 Years and Over:
+         Name:      A17005
+         Variables:
+            A17005_001:   Civilian Population in Labor Force 16 Years and Over:
+            A17005_002:      Employed
+            A17005_003:      Unemployed
+
+
+      10. Household Income (In <DollarYear> Inflation Adjusted Dollars)
+          Universe:  Households
+          Name:      A14001
+          Variables:
+             A14001_001:   Households:
+             A14001_002:      Less than $10,000
+             A14001_003:      $10,000 to $14,999
+             A14001_004:      $15,000 to $19,999
+             A14001_005:      $20,000 to $24,999
+             A14001_006:      $25,000 to $29,999
+             A14001_007:      $30,000 to $34,999
+             A14001_008:      $35,000 to $39,999
+             A14001_009:      $40,000 to $44,999
+             A14001_010:      $45,000 to $49,999
+             A14001_011:      $50,000 to $59,999
+             A14001_012:      $60,000 to $74,999
+             A14001_013:      $75,000 to $99,999
+             A14001_014:      $100,000 to $124,999
+             A14001_015:      $125,000 to $149,999
+             A14001_016:      $150,000 to $199,999
+             A14001_017:      $200,000 or More
+
+
+      11. Gini Index of Income Inequality
+          Universe:  Households
+          Name:      A14028
+          Variables:
+             A14028_001:   Gini Index
+
+
+      12. Housing Units
+          Universe:  Housing units
+          Name:      A10001
+          Variables:
+             A10001_001:   Housing Units
+
+
+      13. Means of Transportation to Work for Workers 16 Years and Over
+          Universe:  Workers 16 Years and Over
+          Name:      A09005
+          Variables:
+             A09005_001:   Workers 16 Years and Over:
+             A09005_002:      Car, Truck, or Van
+             A09005_009:         Drove Alone
+             A09005_010:         Carpooled
+             A09005_003:      Public Transportation (Includes Taxicab)
+             A09005_004:      Motorcycle
+             A09005_005:      Bicycle
+             A09005_006:      Walked
+             A09005_007:      Other Means
+             A09005_008:      Worked At Home
+
+
+      14. Travel Time to Work for Workers 16 Years and Over
+          Universe:  Workers 16 Years and Over
+          Name:      A09001
+          Variables:
+             A09001_001:   Workers 16 Years and Over:
+             A09001_002:      Did Not Work At Home:
+             A09001_003:         Less than 10 Minutes
+             A09001_004:         10 to 19 Minutes
+             A09001_005:         20 to 29 Minutes
+             A09001_006:         30 to 39 Minutes
+             A09001_007:         40 to 59 Minutes
+             A09001_008:         60 to 89 Minutes
+             A09001_009:         90 or More Minutes
+             A09001_010:      Worked At Home
+
+
+      15. Travel Time to Work for Workers 16 Years and Over (Who Did Not Work At Home)
+          Universe:  Workers 16 Years and Over Who Did Not Work at Home
+          Name:      B09001
+          Variables:
+             B09001_001:   Workers 16 Years and Over Who Did Not Work At Home:
+             B09001_002:      Less than 10 Minutes
+             B09001_003:      10 to 19 Minutes
+             B09001_004:      20 to 29 Minutes
+             B09001_005:      30 to 39 Minutes
+             B09001_006:      40 to 59 Minutes
+             B09001_007:      60 to 89 Minutes
+             B09001_008:      90 or More Minutes
+
+
+      16. White vs Non-White Homeowners
+          Universe:  Owner Occupied Housing Units
+          Name:      B10060
+          Variables:
+             B10060_001:   Owner Occupied Housing Units:
+             B10060_002:      White Alone, Not Hispanic or Latino Homeowners 
+             B10060_003:      Non-White Homeowners
+
+
+      17. Households with Public Assistance Income
+          Universe:  Households
+          Name:      A10014
+          Variables:
+             A10014_001:   Households:
+             A10014_002:      With Public Assistance Income
+             A10014_003:      No Public Assistance Income
+
+
+      18. Median Gross Rent
+          Universe:  Renter-occupied housing units paying cash rent
+          Name:      A18009
+          Variables:
+             A18009_001:   Median Gross Rent
+
+
+      19. Poverty Status in 2020 for Population Age 18 to 64
+          Universe:  Population Age 18 to 64 for whom poverty status Is determined
+          Name:      A13003B
+          Variables:
+             A13003B_001:   Population Age 18 to 64 for Whom Poverty Status  Is Determined:
+             A13003B_002:      Living in Poverty
+             A13003B_003:      At or Above Poverty Level
+
+
+      20. Average Commute to Work (In Min)
+          Universe:  Average Commute to Work (In min)
+          Name:      A09003
+          Variables:
+             A09003_001:   Average Commute to Work (In Min)
+
+
+      21. Housing Units by Vehicles Available
+          Universe:  Universe:  Occupied housing units
+          Name:      A10030
+          Variables:
+             A10030_001:   Occupied Housing Units:
+             A10030_002:      No Vehicle Available
+             A10030_003:      1 Vehicle Available
+             A10030_004:      2 Vehicles Available
+             A10030_005:      3 Vehicles Available
+             A10030_006:      4 Vehicles Available
+             A10030_007:      5 or More Vehicles Available
+
+
+      22. Vehicles Available (Renter-Occupied Housing Units)
+          Universe:  Universe:  Renter-Occupied Housing Units
+          Name:      A10054B
+          Variables:
+             A10054B_001:   Renter-Occupied Housing Units:
+             A10054B_002:      No Vehicle Available
+             A10054B_003:      1 Vehicle Available
+             A10054B_004:      2 Vehicles Available
+             A10054B_005:      3 Vehicles Available
+             A10054B_006:      4 Vehicles Available
+             A10054B_007:      5 or More Vehicles Available
+
+
+
+
+
+Survey:           ACS 2021 (5-Year Estimates)
+Dataset:          American Community Survey 2021
+Tables:
+
+      1. Presence And Types Of Internet Subscriptions In Household
+         Universe:  Universe:  Households
+         Name:      B28002
+         Variables:
+            B28002001:   Total:
+            B28002002:      With An Internet Subscription
+            B28002003:         Dial-Up With No Other Type Of Internet Subscription
+            B28002004:         Broadband Of Any Type
+            B28002005:         Cellular Data Plan
+            B28002006:            Cellular Data Plan With No Other Type Of Internet Subscription
+            B28002007:         Broadband Such As Cable, Fiber Optic Or Dsl
+            B28002008:            Broadband Such As Cable, Fiber Optic Or Dsl With No Other Type Of Internet Subscription
+            B28002009:         Satellite Internet Service
+            B28002010:            Satellite Internet Service With No Other Type Of Internet Subscription
+            B28002011:         Other Service With No Other Type Of Internet Subscription
+            B28002012:      Internet Access Without A Subscription
+            B28002013:      No Internet Access
+
+
+      2. Presence And Types Of Internet Subscriptions In Household
+         Universe:  Universe:  Households
+         Name:      B28002_se
+         Variables:
+            B28002001s:   Std. Error: Total:
+            B28002002s:      Std. Error: With An Internet Subscription
+            B28002003s:         Std. Error: Dial-Up With No Other Type Of Internet Subscription
+            B28002004s:         Std. Error: Broadband Of Any Type
+            B28002005s:         Std. Error: Cellular Data Plan
+            B28002006s:            Std. Error: Cellular Data Plan With No Other Type Of Internet Subscription
+            B28002007s:         Std. Error: Broadband Such As Cable, Fiber Optic Or Dsl
+            B28002008s:            Std. Error: Broadband Such As Cable, Fiber Optic Or Dsl With No Other Type Of Internet Subscription
+            B28002009s:         Std. Error: Satellite Internet Service
+            B28002010s:            Std. Error: Satellite Internet Service With No Other Type Of Internet Subscription
+            B28002011s:         Std. Error: Other Service With No Other Type Of Internet Subscription
+            B28002012s:      Std. Error: Internet Access Without A Subscription
+            B28002013s:      Std. Error: No Internet Access
+
+
+      3. Presence Of A Computer And Type Of Internet Subscription In Household
+         Universe:  Universe:  Households
+         Name:      B28003
+         Variables:
+            B28003001:   Total:
+            B28003002:      Has A Computer:
+            B28003003:         With Dial-Up Internet Subscription Alone
+            B28003004:         With A Broadband Internet Subscription
+            B28003005:         Without An Internet Subscription
+            B28003006:      No Computer
+
+
+      4. Presence Of A Computer And Type Of Internet Subscription In Household
+         Universe:  Universe:  Households
+         Name:      B28003_se
+         Variables:
+            B28003001s:   Std. Error: Total:
+            B28003002s:      Std. Error: Has A Computer:
+            B28003003s:         Std. Error: With Dial-Up Internet Subscription Alone
+            B28003004s:         Std. Error: With A Broadband Internet Subscription
+            B28003005s:         Std. Error: Without An Internet Subscription
+            B28003006s:      Std. Error: No Computer
+
+
+      5. Internet Subscriptions In Household
+         Universe:  Universe:  Households
+         Name:      B28011
+         Variables:
+            B28011001:   Total:
+            B28011002:      With An Internet Subscription
+            B28011003:         Dial-Up Alone
+            B28011004:         Broadband Such As Cable, Fiber Optic, Or Dsl
+            B28011005:         Satellite Internet Service
+            B28011006:         Other Service
+            B28011007:      Internet Access Without A Subscription
+            B28011008:      No Internet Access
+
+
+      6. Internet Subscriptions In Household
+         Universe:  Universe:  Households
+         Name:      B28011_se
+         Variables:
+            B28011001s:   Std. Error: Total:
+            B28011002s:      Std. Error: With An Internet Subscription
+            B28011003s:         Std. Error: Dial-Up Alone
+            B28011004s:         Std. Error: Broadband Such As Cable, Fiber Optic, Or Dsl
+            B28011005s:         Std. Error: Satellite Internet Service
+            B28011006s:         Std. Error: Other Service
+            B28011007s:      Std. Error: Internet Access Without A Subscription
+            B28011008s:      Std. Error: No Internet Access
+
+
+
+
+
+ 
+ 
+ 
+--------------------------------------------------------------------------------
+Data Dictionary
+--------------------------------------------------------------------------------
+ 
+Variables 
+      FIPS:           FIPS
+      QName:          Qualifying Name
+      FILEID:         File identification
+      STUSAB:         State Postal Abbreviation
+      SUMLEV:         Summary Level
+      GEOCOMP:        Geographic Component
+      LOGRECNO:       Logical Record Number
+      US:             US
+      REGION:         Census Region
+      DIVISION:       Census Division
+      STATECE:        State (Census Code)
+      STATE:          State (FIPS Code)
+      COUNTY:         County of current residence
+      COUSUB:         County Subdivision (FIPS)
+      PLACE:          Place (FIPS Code)
+      TRACT:          Census Tract
+      BLKGRP:         Block Group
+      CONCIT:         Consolidated City
+      AIANHH:         American Indian Area/AlaskaNative Area/ Hawaiian Home Land(Census)
+      AIANHHFP:       American Indian Area/AlaskaNative Area/ Hawaiian Home Land(FIPS)
+      AIHHTLI:        American Indian Trust Land/Hawaiian Home Land Indicator
+      AITSCE:         American Indian TribalSubdivision (Census)
+      AITS:           American Indian TribalSubdivision (FIPS)
+      ANRC:           Alaska Native RegionalCorporation (FIPS)
+      CBSA:           Metropolitan and MicropolitanStatistical Area
+      CSA:            Combined Statistical Area
+      METDIV:         Metropolitan Statistical Area-Metropolitan Division
+      MACC:           Metropolitan Area Central City
+      MEMI:           Metropolitan/MicropolitanIndicator Flag
+      NECTA:          New England City and Town Area
+      CNECTA:         New England City and TownCombined Statistical Area
+      NECTADIV:       New England City and Town AreaDivision
+      UA:             Urban Area
+      UACP:           Urban Area Central Place
+      CDCURR:         Current Congressional District ***
+      SLDU:           State Legislative District Upper
+      SLDL:           State Legislative District Lower
+      VTD:            Voting District
+      ZCTA3:          ZIP Code Tabulation Area (3-digit)
+      ZCTA5:          5-digit ZIP Code Tabulation Area
+      SUBMCD:         Subminor Civil Division (FIPS)
+      SDELM:          State-School District (Elementary)
+      SDSEC:          State-School District (Secondary)
+      SDUNI:          State-School District (Unified)
+      UR:             Urban/Rural
+      PCI:            Principal City Indicator
+      TAZ:            Traffic Analysis Zone
+      UGA:            Urban Growth Area
+      PUMA5:          Public Use Microdata Area – 5%File
+      PUMA1:          Public Use Microdata Area - 1% File
+      GEOID:          Geographic Identifier
+      NAME:           Area Name
+      BTTR:           Tribal Tract
+      BTBG:           Tribal Block Group
+      PLACESE:        Place (State FIPS + Place FIPS)
+      A00001_001:     Total Population
+      A00002_001:     Total Population
+      A00002_002:     Population Density (Per Sq. Mile)
+      A00002_003:     Area (Land)
+      A02001_001:     Total Population:
+      A02001_002:     Total Population: Male
+      A02001_003:     Total Population: Female
+      C01001_001:     Total:
+      C01001_002:     Total: Under 5 Years
+      C01001_003:     Total: 5 to 9 Years
+      C01001_004:     Total: 10 to 14 Years
+      C01001_005:     Total: 15 to 17 Years
+      C01001_006:     Total: 18 and 19 Years
+      C01001_007:     Total: 20 Years
+      C01001_008:     Total: 21 Years
+      C01001_009:     Total: 22 to 24 Years
+      C01001_010:     Total: 25 to 29 Years
+      C01001_011:     Total: 30 to 34 Years
+      C01001_012:     Total: 35 to 39 Years
+      C01001_013:     Total: 40 to 44 Years
+      C01001_014:     Total: 45 to 49 Years
+      C01001_015:     Total: 50 to 54 Years
+      C01001_016:     Total: 55 to 59 Years
+      C01001_017:     Total: 60 and 61 Years
+      C01001_018:     Total: 62 to 64 Years
+      C01001_019:     Total: 65 and 66 Years
+      C01001_020:     Total: 67 to 69 Years
+      C01001_021:     Total: 70 to 74 Years
+      C01001_022:     Total: 75 to 79 Years
+      C01001_023:     Total: 80 to 84 Years
+      C01001_024:     Total: 85 Years and Over
+      A02002_001:     Total Population:
+      A02002_002:     Total Population: Male
+      A02002_003:     Total Population: Male: Under 5 Years
+      A02002_004:     Total Population: Male: 5 to 9 Years
+      A02002_005:     Total Population: Male: 10 to 14 Years
+      A02002_006:     Total Population: Male: 15 to 17 Years
+      A02002_007:     Total Population: Male: 18 to 24 Years
+      A02002_008:     Total Population: Male: 25 to 34 Years
+      A02002_009:     Total Population: Male: 35 to 44 Years
+      A02002_010:     Total Population: Male: 45 to 54 Years
+      A02002_011:     Total Population: Male: 55 to 64 Years
+      A02002_012:     Total Population: Male: 65 to 74 Years
+      A02002_013:     Total Population: Male: 75 to 84 Years
+      A02002_014:     Total Population: Male: 85 Years and Over
+      A02002_015:     Total Population: Female
+      A02002_016:     Total Population: Female: Under 5 Years
+      A02002_017:     Total Population: Female: 5 to 9 Years
+      A02002_018:     Total Population: Female: 10 to 14 Years
+      A02002_019:     Total Population: Female: 15 to 17 Years
+      A02002_020:     Total Population: Female: 18 to 24 Years
+      A02002_021:     Total Population: Female: 25 to 34 Years
+      A02002_022:     Total Population: Female: 35 to 44 Years
+      A02002_023:     Total Population: Female: 45 to 54 Years
+      A02002_024:     Total Population: Female: 55 to 64 Years
+      A02002_025:     Total Population: Female: 65 to 74 Years
+      A02002_026:     Total Population: Female: 75 to 84 Years
+      A02002_027:     Total Population: Female: 85 Years and Over
+      A03001_001:     Total Population:
+      A03001_002:     Total Population: White Alone
+      A03001_003:     Total Population: Black or African American Alone
+      A03001_004:     Total Population: American Indian and Alaska Native Alone
+      A03001_005:     Total Population: Asian Alone
+      A03001_006:     Total Population: Native Hawaiian and Other Pacific Islander Alone
+      A03001_007:     Total Population: Some Other Race Alone
+      A03001_008:     Total Population: Two or More Races
+      A10025_001:     Occupied Housing Units
+      A10025_002:     Occupied Housing Units: Family Households
+      A10025_003:     Occupied Housing Units: Family Households: Married-Couple Family
+      A10025_004:     Occupied Housing Units: Family Households: Married-Couple Family: Householder 15 to 34 Years
+      A10025_005:     Occupied Housing Units: Family Households: Married-Couple Family: Householder 35 to 64 Years
+      A10025_006:     Occupied Housing Units: Family Households: Married-Couple Family: Householder 65 Years and Over
+      A10025_007:     Occupied Housing Units: Family Households: Other Family
+      A10025_008:     Occupied Housing Units: Family Households: Other Family: Male Householder, No Wife Present
+      A10025_009:     Occupied Housing Units: Family Households: Other Family: Male Householder, No Wife Present: Householder 15 to 34 Years
+      A10025_010:     Occupied Housing Units: Family Households: Other Family: Male Householder, No Wife Present: Householder 35 to 64 Years
+      A10025_011:     Occupied Housing Units: Family Households: Other Family: Male Householder, No Wife Present: Householder 65 Years and Over
+      A10025_012:     Occupied Housing Units: Family Households: Other Family: Female Householder, No Husband Present
+      A10025_013:     Occupied Housing Units: Family Households: Other Family: Female Householder, No Husband Present: Householder 15 to 34 Years
+      A10025_014:     Occupied Housing Units: Family Households: Other Family: Female Householder, No Husband Present: Householder 35 to 64 Years
+      A10025_015:     Occupied Housing Units: Family Households: Other Family: Female Householder, No Husband Present: Householder 65 Years and Over
+      A10025_016:     Occupied Housing Units: Nonfamily Households
+      A10025_017:     Occupied Housing Units: Nonfamily Households: Householder Living Alone
+      A10025_018:     Occupied Housing Units: Nonfamily Households: Householder Living Alone: Householder 15 to 34 Years
+      A10025_019:     Occupied Housing Units: Nonfamily Households: Householder Living Alone: Householder 35 to 64 Years
+      A10025_020:     Occupied Housing Units: Nonfamily Households: Householder Living Alone: Householder 65 Years and Over
+      A10025_021:     Occupied Housing Units: Nonfamily Households: Householder Not Living Alone
+      A10025_022:     Occupied Housing Units: Nonfamily Households: Householder Not Living Alone: Householder 15 to 34 Years
+      A10025_023:     Occupied Housing Units: Nonfamily Households: Householder Not Living Alone: Householder 35 to 64 Years
+      A10025_024:     Occupied Housing Units: Nonfamily Households: Householder Not Living Alone: Householder 65 Years and Over
+      A12002_001:     Population 25 Years and Over:
+      A12002_002:     Population 25 Years and Over: Less than High School
+      A12002_003:     Population 25 Years and Over: High School Graduate or More (Includes Equivalency)
+      A12002_004:     Population 25 Years and Over: Some College or More
+      A12002_005:     Population 25 Years and Over: Bachelor's Degree or More
+      A12002_006:     Population 25 Years and Over: Master's Degree or More
+      A12002_007:     Population 25 Years and Over: Professional School Degree or More
+      A12002_008:     Population 25 Years and Over: Doctorate Degree
+      A17005_001:     Civilian Population in Labor Force 16 Years and Over:
+      A17005_002:     Civilian Population in Labor Force 16 Years and Over: Employed
+      A17005_003:     Civilian Population in Labor Force 16 Years and Over: Unemployed
+      A14001_001:     Households:
+      A14001_002:     Households: Less than $10,000
+      A14001_003:     Households: $10,000 to $14,999
+      A14001_004:     Households: $15,000 to $19,999
+      A14001_005:     Households: $20,000 to $24,999
+      A14001_006:     Households: $25,000 to $29,999
+      A14001_007:     Households: $30,000 to $34,999
+      A14001_008:     Households: $35,000 to $39,999
+      A14001_009:     Households: $40,000 to $44,999
+      A14001_010:     Households: $45,000 to $49,999
+      A14001_011:     Households: $50,000 to $59,999
+      A14001_012:     Households: $60,000 to $74,999
+      A14001_013:     Households: $75,000 to $99,999
+      A14001_014:     Households: $100,000 to $124,999
+      A14001_015:     Households: $125,000 to $149,999
+      A14001_016:     Households: $150,000 to $199,999
+      A14001_017:     Households: $200,000 or More
+      A14028_001:     Gini Index
+      A10001_001:     Housing Units
+      A09005_001:     Workers 16 Years and Over:
+      A09005_002:     Workers 16 Years and Over: Car, Truck, or Van
+      A09005_009:     Workers 16 Years and Over: Drove Alone
+      A09005_010:     Workers 16 Years and Over: Carpooled
+      A09005_003:     Workers 16 Years and Over: Public Transportation (Includes Taxicab)
+      A09005_004:     Workers 16 Years and Over: Motorcycle
+      A09005_005:     Workers 16 Years and Over: Bicycle
+      A09005_006:     Workers 16 Years and Over: Walked
+      A09005_007:     Workers 16 Years and Over: Other Means
+      A09005_008:     Workers 16 Years and Over: Worked At Home
+      A09001_001:     Workers 16 Years and Over:
+      A09001_002:     Workers 16 Years and Over: Did Not Work At Home
+      A09001_003:     Workers 16 Years and Over: Did Not Work At Home: Less than 10 Minutes
+      A09001_004:     Workers 16 Years and Over: Did Not Work At Home: 10 to 19 Minutes
+      A09001_005:     Workers 16 Years and Over: Did Not Work At Home: 20 to 29 Minutes
+      A09001_006:     Workers 16 Years and Over: Did Not Work At Home: 30 to 39 Minutes
+      A09001_007:     Workers 16 Years and Over: Did Not Work At Home: 40 to 59 Minutes
+      A09001_008:     Workers 16 Years and Over: Did Not Work At Home: 60 to 89 Minutes
+      A09001_009:     Workers 16 Years and Over: Did Not Work At Home: 90 or More Minutes
+      A09001_010:     Workers 16 Years and Over: Worked At Home
+      B09001_001:     Workers 16 Years and Over Who Did Not Work At Home:
+      B09001_002:     Workers 16 Years and Over Who Did Not Work At Home: Less than 10 Minutes
+      B09001_003:     Workers 16 Years and Over Who Did Not Work At Home: 10 to 19 Minutes
+      B09001_004:     Workers 16 Years and Over Who Did Not Work At Home: 20 to 29 Minutes
+      B09001_005:     Workers 16 Years and Over Who Did Not Work At Home: 30 to 39 Minutes
+      B09001_006:     Workers 16 Years and Over Who Did Not Work At Home: 40 to 59 Minutes
+      B09001_007:     Workers 16 Years and Over Who Did Not Work At Home: 60 to 89 Minutes
+      B09001_008:     Workers 16 Years and Over Who Did Not Work At Home: 90 or More Minutes
+      B10060_001:     Owner Occupied Housing Units
+      B10060_002:     Owner Occupied Housing Units: White Alone, Not Hispanic or Latino Homeowners 
+      B10060_003:     Owner Occupied Housing Units: Non-White Homeowners
+      A10014_001:     Households:
+      A10014_002:     Households: with Public Assistance Income
+      A10014_003:     Households: No Public Assistance Income
+      A18009_001:     Median Gross Rent
+      A13003B_001:    Population Age 18 to 64 for Whom Poverty Status  Is Determined:
+      A13003B_002:    Population Age 18 to 64 for Whom Poverty Status  Is Determined: Living in Poverty
+      A13003B_003:    Population Age 18 to 64 for Whom Poverty Status  Is Determined: At or Above Poverty Level
+      A09003_001:     Average Commute to Work (In Min)
+      A10030_001:     Occupied Housing Units
+      A10030_002:     Occupied Housing Units: No Vehicle Available
+      A10030_003:     Occupied Housing Units: 1 Vehicle Available
+      A10030_004:     Occupied Housing Units: 2 Vehicles Available
+      A10030_005:     Occupied Housing Units: 3 Vehicles Available
+      A10030_006:     Occupied Housing Units: 4 Vehicles Available
+      A10030_007:     Occupied Housing Units: 5 or More Vehicles Available
+      A10054B_001:    Renter-Occupied Housing Units
+      A10054B_002:    Renter-Occupied Housing Units: No Vehicle Available
+      A10054B_003:    Renter-Occupied Housing Units: 1 Vehicle Available
+      A10054B_004:    Renter-Occupied Housing Units: 2 Vehicles Available
+      A10054B_005:    Renter-Occupied Housing Units: 3 Vehicles Available
+      A10054B_006:    Renter-Occupied Housing Units: 4 Vehicles Available
+      A10054B_007:    Renter-Occupied Housing Units: 5 or More Vehicles Available
+      B28002001:      Total
+      B28002002:      Total: With An Internet Subscription
+      B28002003:      Total: With An Internet Subscription Dial-Up With No Other Type Of Internet Subscription
+      B28002004:      Total: With An Internet Subscription Broadband Of Any Type
+      B28002005:      Total: With An Internet Subscription Cellular Data Plan
+      B28002006:      Total: With An Internet Subscription Cellular Data Plan Cellular Data Plan With No Other Type Of Internet Subscription
+      B28002007:      Total:  Broadband Such As Cable Fiber Optic Or Dsl
+      B28002008:      Total:  Broadband Such As Cable Fiber Optic Or Dsl Broadband Such As Cable Fiber Optic Or Dsl With No Other Type Of Internet Subscription
+      B28002009:      Total:  Satellite Internet Service
+      B28002010:      Total:  Satellite Internet Service Satellite Internet Service With No Other Type Of Internet Subscription
+      B28002011:      Total:  Other Service With No Other Type Of Internet Subscription
+      B28002012:      Total: Internet Access Without A Subscription
+      B28002013:      Total: No Internet Access
+      B28002001s:     Std. Error: Total
+      B28002002s:     Std. Error: Total: With An Internet Subscription
+      B28002003s:     Std. Error: Total: With An Internet Subscription Dial-Up With No Other Type Of Internet Subscription
+      B28002004s:     Std. Error: Total: With An Internet Subscription Broadband Of Any Type
+      B28002005s:     Std. Error: Total: With An Internet Subscription Cellular Data Plan
+      B28002006s:     Std. Error: Total: With An Internet Subscription Cellular Data Plan Cellular Data Plan With No Other Type Of Internet Subscription
+      B28002007s:     Std. Error: Total:  Broadband Such As Cable Fiber Optic Or Dsl
+      B28002008s:     Std. Error: Total:  Broadband Such As Cable Fiber Optic Or Dsl Broadband Such As Cable Fiber Optic Or Dsl With No Other Type Of Internet Subscription
+      B28002009s:     Std. Error: Total:  Satellite Internet Service
+      B28002010s:     Std. Error: Total:  Satellite Internet Service Satellite Internet Service With No Other Type Of Internet Subscription
+      B28002011s:     Std. Error: Total:  Other Service With No Other Type Of Internet Subscription
+      B28002012s:     Std. Error: Total: Internet Access Without A Subscription
+      B28002013s:     Std. Error: Total: No Internet Access
+      B28003001:      Total
+      B28003002:      Total: Has A Computer
+      B28003003:      Total: Has A Computer: With Dial-Up Internet Subscription Alone
+      B28003004:      Total: Has A Computer: With A Broadband Internet Subscription
+      B28003005:      Total: Has A Computer: Without An Internet Subscription
+      B28003006:      Total: No Computer
+      B28003001s:     Std. Error: Total
+      B28003002s:     Std. Error: Total: Has A Computer
+      B28003003s:     Std. Error: Total: Has A Computer: With Dial-Up Internet Subscription Alone
+      B28003004s:     Std. Error: Total: Has A Computer: With A Broadband Internet Subscription
+      B28003005s:     Std. Error: Total: Has A Computer: Without An Internet Subscription
+      B28003006s:     Std. Error: Total: No Computer
+      B28011001:      Total
+      B28011002:      Total: With An Internet Subscription
+      B28011003:      Total: With An Internet Subscription Dial-Up Alone
+      B28011004:      Total: With An Internet Subscription Broadband Such As Cable Fiber Optic Or Dsl
+      B28011005:      Total: With An Internet Subscription Satellite Internet Service
+      B28011006:      Total: With An Internet Subscription Other Service
+      B28011007:      Total: Internet Access Without A Subscription
+      B28011008:      Total: No Internet Access
+      B28011001s:     Std. Error: Total
+      B28011002s:     Std. Error: Total: With An Internet Subscription
+      B28011003s:     Std. Error: Total: With An Internet Subscription Dial-Up Alone
+      B28011004s:     Std. Error: Total: With An Internet Subscription Broadband Such As Cable Fiber Optic Or Dsl
+      B28011005s:     Std. Error: Total: With An Internet Subscription Satellite Internet Service
+      B28011006s:     Std. Error: Total: With An Internet Subscription Other Service
+      B28011007s:     Std. Error: Total: Internet Access Without A Subscription
+      B28011008s:     Std. Error: Total: No Internet Access
+
+
+
+
+--------------------------------------------------------------------------------
+Citation and Use of Data
+--------------------------------------------------------------------------------
+ 
+All persons are granted a limited license to use this documentation and the
+accompanying data, subject to the following conditions:
+
+* Publications and research reports employing the data
+  must cite it appropriately. The citation should include the following:
+
+	  www.socialexplorer.com
+	  New York City, NY: Social Explorer 2023
+
+
+* Citations should also include the URL for this report:
+
+    http://www.socialexplorer.com/pub/reportdata/HtmlResults.aspx?reportid=R13395758
+
+If you have any questions contact info@socialexplorer.com
