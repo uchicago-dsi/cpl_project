@@ -11,3 +11,5 @@ The Chicago Public Library aims to gain a deeper understanding of the communitie
 - Exploratory data analysis/visualizations to understand the populations assigned to branches
 - Explore cardholder level data to understand usage patterns to help facilitate the refining of resources and programs offered
 - Link in transit information to understand which library branches may be underserved by public transit
+
+Rajvi Shah
