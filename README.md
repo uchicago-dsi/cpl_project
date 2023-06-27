@@ -12,6 +12,9 @@ The Chicago Public Library aims to gain a deeper understanding of the communitie
 - Explore cardholder level data to understand usage patterns to help facilitate the refining of resources and programs offered
 - Link in transit information to understand which library branches may be underserved by public transit
 
+
+## Abby Reynolds
+
 Rajvi Shah
 
 Tasnim
