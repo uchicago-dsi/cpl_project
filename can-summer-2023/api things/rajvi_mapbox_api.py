@@ -4,7 +4,7 @@
 import requests
 from urllib.request import urlopen
 import json
-from rajvi_mapbox_token import my_token
+from DO_NOT_COMMIT_rajvi_mapbox_token import my_token
 
 TOKEN = my_token()
 
