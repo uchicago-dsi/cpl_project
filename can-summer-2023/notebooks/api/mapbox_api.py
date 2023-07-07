@@ -53,6 +53,6 @@ class MapboxAPI:
         
         full_json = data_response.json()
         
-        geometry = full_json['features'][0]['geometry']['coordinates'][0] #coordinates of polygon
+        geometry = full_json['features'][0]['geometry'] #coordinates of polygon
         
         return geometry
