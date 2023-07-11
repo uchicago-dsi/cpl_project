@@ -25,7 +25,7 @@ class MapboxAPI:
         '''
         
         self.token = TOKEN
-        self.base_url = 'https://api.mapbox.com/isochrone/v1/mapbox/driving/' 
+        self.base_url = 'https://api.mapbox.com/isochrone/v1/mapbox/walking/' 
         #note that driving is an option (other is walking), look at isochrone documentation
         
     def get_data(self, coordinates, contours_minutes):
@@ -53,6 +53,6 @@ class MapboxAPI:
         
         full_json = data_response.json()
         
-        geometry = full_json['features'][0]['geometry']['coordinates'][0] #coordinates of polygon
+        geometry = full_json['features'][0]['geometry'] #coordinates of polygon
         
         return geometry
